@@ -10,3 +10,13 @@ test('visiting /cars', function(assert) {
     assert.equal(currentURL(), '/cars');
   });
 });
+
+test('clicking link to get to /cars', function(assert) {
+  visit('/');
+
+  click('#all-cars');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/cars');
+  });
+});
