@@ -14,6 +14,10 @@ export default function() {
     return {data};
   });
 
+  this.post('/cars', (db, request) => {
+      return JSON.parse(request.requestBody);
+  });
+
   // These comments are here to help you get started. Feel free to delete them.
 
   /*
