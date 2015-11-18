@@ -1,4 +1,18 @@
 export default function() {
+  this.get('/cars', (db) => {
+    let data = {};
+    data = db.cars.map((attrs) => {
+        let car = {
+          type: 'cars',
+          id: attrs.id,
+          attributes: attrs
+        };
+
+        return car;
+    });
+
+    return {data};
+  });
 
   // These comments are here to help you get started. Feel free to delete them.
 

@@ -20,3 +20,13 @@ test('clicking link to get to /cars', function(assert) {
     assert.equal(currentURL(), '/cars');
   });
 });
+
+test('I see all cars on the cars page', (assert) => {
+  server.create('car');
+  visit('/cars');
+
+  andThen(() => {
+    const cars = find('li.car');
+    assert.equal(cars.length, 1);
+  });
+});
